@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.ProjectController">
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <TextField fx:id="txtSzukaj" promptText="Szukaj projektu..." prefWidth="200"/>
+                <Button fx:id="btnSzukaj" text="Szukaj" onAction="#onActionBtnSzukaj"/>
+
+                <Region HBox.hgrow="ALWAYS" /> <Label text="Rozmiar strony:"/>
+                <ChoiceBox fx:id="cbPageSizes"/>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button fx:id="btnDodaj" text="Dodaj" onAction="#onActionBtnDodaj"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="btnPierwsza" text="|&lt;" onAction="#onActionBtnPierwsza"/>
+                <Button fx:id="btnWstecz" text="&lt;" onAction="#onActionBtnWstecz"/>
+                <Label text="strona"/>
+                <Button fx:id="btnDalej" text="&gt;" onAction="#onActionBtnDalej"/>
+                <Button fx:id="btnOstatnia" text="&gt;|" />
+            </HBox>
+
+            <TableView fx:id="tblProjekt" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="Id" prefWidth="40"/>
+                    <TableColumn fx:id="colNazwa" text="Nazwa" prefWidth="150"/>
+                    <TableColumn fx:id="colopis" text="Opis" prefWidth="250"/>
+                    <TableColumn fx:id="colDataCzasUtworzenia" text="Data utworzenia" prefWidth="150"/>
+                    <TableColumn fx:id="colDataOddania" text="Data oddania" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
